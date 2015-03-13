@@ -1,0 +1,17 @@
+#new-comment-container
+  div class="well"
+    h4 Leave a comment:
+
+    - if @comment && @comment.errors.any?
+      .alert.alert-danger.alert-dismissible
+        button type="button" class="close" data-dismiss="alert" aria-label="Close"
+          span aria-hidden="true" &times
+        ul
+          - @comment.errors.full_messages.each do |msg|
+            li = msg
+
+    = form_for [@post, Comment.new], role: 'form' do |f|
+      div class="form-group"
+        = f.text_area :content, class: 'form-control', rows: 3
+
+      = f.submit "Add comment", class: 'btn btn-primary'

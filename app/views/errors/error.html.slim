@@ -1,0 +1,26 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title= content_for?(:title) ? yield(:title) : "Tiny Blog"
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+      /! Le HTML5 shim, for IE6-8 support of HTML elements
+      /[if lt IE 9]
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
+
+
+  body
+    div class="container"
+      div class="jumbotron text-center" style="margin-top: 10em;"
+        h1 = @header
+        br
+        p = @message
+        = link_to content_tag(:i, '', class: 'glyphicon glyphicon-home', style: 'margin-right: 0.5em;') + I18n.t('home'), root_url, class: 'btn btn-large btn-primary'
+        =< link_to content_tag(:i, '', class: 'glyphicon glyphicon-chevron-left', style: 'margin-right: 0.5em;') + I18n.t('go_back'),
+                   '#',
+                   class: 'btn btn-large btn-info',
+                   onclick: 'parent.history.back(); return false;'

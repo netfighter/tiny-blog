@@ -1,0 +1,43 @@
+- breadcrumb :post, @post
+
+.row
+  .col-lg-9
+    h2 = @post.title
+  - if can? :manage, @post
+    .col-lg-3
+      .pull-right
+        div class="btn-toolbar" role="toolbar"
+          div class="btn-group"
+            = link_to (content_tag(:small, content_tag(:i, '', class: 'glyphicon glyphicon-chevron-left') + ' Back')),
+                      posts_path,
+                      class: 'btn btn-default',
+                      'aria-label' => 'Left Align'
+            = link_to (content_tag(:small, content_tag(:i, '', class: 'glyphicon glyphicon-pencil') + ' Edit')),
+                      edit_post_path(@post),
+                      class: 'btn btn-default',
+                      'aria-label' => 'Center Align'
+            = link_to content_tag(:small, content_tag(:i, '', class: 'glyphicon glyphicon-remove') + ' Delete'),
+                      post_path(@post),
+                      class: 'btn btn-default',
+                      confirm: 'Are you sure?',
+                      method: :delete,
+                      'aria-label' => 'Justify'
+
+div = simple_format @post.content
+hr
+
+- if !current_user
+  .alert.alert-info
+    | You need to
+    a<> href="#{"#{new_user_session_path}"}" Sign in
+    | to be able to add comments.
+- if can? :create, Comment
+  = render 'comments/form'
+
+h3 Comments
+hr
+#comments
+  - if @post.comments.any?
+    = render partial: @post.comments
+  - else
+    .alert.alert-info There are no comments yet.

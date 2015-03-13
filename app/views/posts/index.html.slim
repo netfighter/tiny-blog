@@ -1,0 +1,30 @@
+div id="posts"
+  .row
+    .col-lg-10
+      h1 Posts
+    - if can? :create, :post
+      .col-lg-2
+        .pull-right
+          a href="#{new_post_path}" class="btn btn-default" aria-label="Center Align"
+            i> class="glyphicon glyphicon-plus"
+            | New Post
+
+  div#posts-list
+    - @posts.each do |post|
+      div
+        h2
+          a href="#{post_path(post)}" #{post.title}
+        div
+          = simple_format truncate(post.content, length: 650, omission: '...', escape: false)
+          hr
+
+- if Settings.frontend.use_mvc
+  javascript:
+    $(function() {
+      // Blog is the app name
+      window.router = new Blog.Routers.PostsRouter({posts: #{@posts.to_json.html_safe} });
+      Backbone.history.start();
+      navigation = new Backbone.Navigation();
+      navigation.handleRouter(window.router);
+    });
+  
