@@ -10,7 +10,7 @@ admin_user = User.new(email: 'admin@admin.com',
                       first_name: 'Admin',
                       password: 'administrator',
                       password_confirmation: 'administrator',
-                      confirmed_ad: DateTime.now
+                      confirmed_at: DateTime.now
 )
 admin_user.skip_confirmation!
 admin_user.save!

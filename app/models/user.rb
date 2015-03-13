@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :confirmable, :recoverable,
          :rememberable, :trackable, :validatable, :registerable
 
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :confirmed_at
   validates_presence_of :first_name
 
   before_create :set_default_role
