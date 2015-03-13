@@ -14,35 +14,37 @@ html lang="en"
 
 
   body
-    .navbar.navbar-default.navbar-static-top.navbar-inverse
+    nav class="navbar navbar-default navbar-static-top navbar-inverse"
       .container
-        button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        a.navbar-brand href="/" Tiny Blog
+        .navbar-header
+          button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand href="/" Tiny Blog
 
-        ul class="nav navbar-nav navbar-right"
-          li class="dropdown"
-            - if current_user
-              a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"
-                i> class="glyphicon glyphicon-user"
-                = current_user
-                span< class="caret"
-              ul class="dropdown-menu" role="menu"
+        div id="navbar" class="navbar-collapse collapse"
+          ul class="nav navbar-nav navbar-right"
+            li class="dropdown"
+              - if current_user
+                a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"
+                  i> class="glyphicon glyphicon-user"
+                  = current_user
+                  span< class="caret"
+                ul class="dropdown-menu" role="menu"
+                  li
+                    a href="#{edit_user_registration_path}"
+                      i> class="glyphicon glyphicon-edit"
+                      | Edit account
+                  li
+                    a href="#{destroy_user_session_path}" data-method="delete"
+                      i> class="glyphicon glyphicon-log-out"
+                      | Sign out
+              - else
                 li
-                  a href="#{edit_user_registration_path}"
-                    i> class="glyphicon glyphicon-edit"
-                    | Edit account
-                li
-                  a href="#{destroy_user_session_path}" data-method="delete"
-                    i> class="glyphicon glyphicon-log-out"
-                    | Sign out
-            - else
-              li
-                a href="#{new_user_session_path}"
-                  i> class="glyphicon glyphicon-log-in"
-                  | Sign in
+                  a href="#{new_user_session_path}"
+                    i> class="glyphicon glyphicon-log-in"
+                    | Sign in
 
     .container
       .row
