@@ -4,6 +4,7 @@
   .col-lg-2
     .pull-right
       a href="#posts/new" class="btn btn-default" aria-label="Center Align"
-        i> class="glyphicon glyphicon-plus"
-        | New Post
+        small
+          i> class="glyphicon glyphicon-plus"
+          | New Post
 div#posts-list
