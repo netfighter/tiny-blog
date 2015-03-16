@@ -1,5 +1,11 @@
 class Blog.Models.User extends Backbone.NestedAttributesModel
   defaults:
-    first_name: ''
-    last_name: ''
+    name: ''
     email: ''
+
+  initialize: ->
+    @name()
+    @
+
+  name: ->
+    @.set('name', [@.get('first_name'),  @.get('last_name')].join(' ').trim())

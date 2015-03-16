@@ -20,6 +20,7 @@ class Blog.Views.CommentsNewView extends Backbone.View
     e.stopPropagation()
 
     content = $('#content').val()
+    console.log(@model)
     @model.set {content: content}
 
     if @model.isValid(true)

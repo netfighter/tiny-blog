@@ -2,7 +2,7 @@ div class="media"
   div class="media-body"
     h4 class="media-heading"
       small> by
-      = @user.first_name + ' ' + @user.last_name
+      = @user.name
       small< = $.timeago(@created_at)
       .pull-right
         small
