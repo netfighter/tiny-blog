@@ -20,10 +20,18 @@ div id="posts"
           hr
 
 - if Settings.frontend.use_mvc
+  - @js_abilities = ability_to_array(current_ability)
   javascript:
     $(function() {
-      // Blog is the app name
+      // Get the current user
+      window.user = new Blog.Models.User(#{{current_or_guest_user.to_json(only: [:id, :first_name, :last_name, :guest, :admin], methods: [:admin])}})
+      window.ability = new Ability({ rules: #{{@js_abilities.to_json}} });
+
+      // Initiate the blog frontend app
       window.router = new Blog.Routers.PostsRouter({posts: #{@posts.to_json.html_safe} });
+      $('body').on('click', function() {
+        $(this).find('.alert').remove();
+      });
       Backbone.history.start();
       navigation = new Backbone.Navigation();
       navigation.handleRouter(window.router);

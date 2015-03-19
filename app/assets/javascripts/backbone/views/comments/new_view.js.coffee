@@ -6,11 +6,19 @@ class Blog.Views.CommentsNewView extends Backbone.View
   events:
     "submit #new-comment": "save"
 
-  initialize: ->
+  initialize: (options) ->
     @list = $('#comments-list')
+    @options = options
+    @reset()
     Backbone.Validation.unbind this
     Backbone.Validation.bind this
     @render()
+
+  reset: ->
+    newComment = new Blog.Models.PostComment()
+    newComment.urlRoot = @options['parentModel'].url() + '/comments'
+    @model = newComment
+    @collection = @options['parentModel'].get('comments')
 
   render: ->
     @$el.html @template()
@@ -23,11 +31,11 @@ class Blog.Views.CommentsNewView extends Backbone.View
     @model.set {content: content}
 
     if @model.isValid(true)
-      return true
-#      @collection.create @model,
-#        success: (comment) =>
-#          @model = comment
-#          $('#new-comment')[0].reset()
-#          window.location.hash = "/posts/#{comment.get('post_id')}"
+      @model.save {},
+        success: () =>
+          @model.set('user', window.user)
+          @collection.add(@model)
+          @reset()
+          @render()
 
     return false
