@@ -23,6 +23,7 @@ class Blog.Views.PostsNewView extends Backbone.View
     @model.set {title: title, content: content}
 
     if @model.isValid(true)
+      @model.unset('comments', 'silent')
       @collection.create @model,
         success: (post) =>
           @model = post
