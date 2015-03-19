@@ -5,6 +5,8 @@ class Blog.Models.PostComment extends Backbone.NestedAttributesModel
   defaults:
     content: ''
 
+  backboneClass: "Comment"
+
   validation: {
     content: [
       {

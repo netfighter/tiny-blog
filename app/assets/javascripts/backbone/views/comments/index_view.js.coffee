@@ -5,6 +5,7 @@ class Blog.Views.CommentsIndexView extends Backbone.View
   template: JST["backbone/templates/comments/index"]
 
   initialize: ->
+    @collection.on 'add', @render, @
     @render()
 
   addAll: ->

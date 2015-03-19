@@ -19,10 +19,8 @@ class Blog.Views.PostsShowView extends Backbone.View
       commentsView.render()
       commentsView.delegateEvents()
 
-      # display new comment form
-      new_comment = new Blog.Models.PostComment()
-      new_comment.urlRoot = model.url() + '/comments'
-      newCommentView = new Blog.Views.CommentsNewView({model: new_comment, collection: model.get('comments')})
+      # display the new comment form
+      newCommentView = new Blog.Views.CommentsNewView({parentModel: model})
       newCommentView.render()
       newCommentView.delegateEvents()
     )

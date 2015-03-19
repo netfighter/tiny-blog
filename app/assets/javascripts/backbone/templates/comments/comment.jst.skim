@@ -4,11 +4,13 @@ div class="media"
       small> by
       = @user.name
       small< = $.timeago(@created_at)
-      .pull-right
-        small
-          a href="#" data-confirm="Are you sure?" data-method="delete" class="comment-destroy"
-            i> class="glyphicon glyphicon-remove"
-            | Delete
+      
+      - if window.user.get('admin') || window.user.id == @user.id
+        .pull-right
+          small
+            a href="#" data-confirm="Are you sure?" data-method="delete" class="comment-destroy"
+              i> class="glyphicon glyphicon-remove"
+              | Delete
 
     = @content
     hr

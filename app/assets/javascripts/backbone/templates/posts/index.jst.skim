@@ -2,9 +2,10 @@
   .col-lg-10
     h1 Posts
   .col-lg-2
-    .pull-right
-      a href="#posts/new" class="btn btn-default" aria-label="Center Align"
-        small
-          i> class="glyphicon glyphicon-plus"
-          | New Post
+    - if window.ability.can("create", "Post")
+      .pull-right
+        a href="#posts/new" class="btn btn-default" aria-label="Center Align"
+          small
+            i> class="glyphicon glyphicon-plus"
+            | New Post
 div#posts-list
