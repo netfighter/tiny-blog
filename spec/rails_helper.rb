@@ -5,6 +5,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'factory_girl_rails'
 require 'support/database_cleaner'
+require 'support/devise_support'
 require 'devise'
 
 RSpec.configure do |config|
