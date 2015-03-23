@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:netfighter/backbone-rails.git
+  remote: https://github.com/netfighter/backbone-rails
   revision: d7f06407ab0adcc08b1cd79257a01a3a58560b00
   specs:
     rails-backbone (1.1.2)
