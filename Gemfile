@@ -60,7 +60,7 @@ gem 'compass'
 gem 'rails_config'
 
 gem 'devise'
-gem 'cancan'
+gem 'cancancan', '~> 1.10.0'
 gem 'devise-bootstrap-views'
 
 group :development do
