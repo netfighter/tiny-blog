@@ -11,10 +11,6 @@ RSpec.describe User, :type => :model do
     expect(User.last).to eq user
   end
 
-  it 'is invalid without a firs_tname' do
-    expect(FactoryGirl.build(:user, first_name: nil)).not_to be_valid
-  end
-
   it 'is invalid without an email address' do
     expect(FactoryGirl.build(:user, email: nil)).not_to be_valid
   end
