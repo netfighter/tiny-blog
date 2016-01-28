@@ -1,39 +1,5 @@
 div id="posts"
-  .row
-    .col-lg-10
-      h1 Posts
-    - if can? :create, :post
-      .col-lg-2
-        .pull-right
-          a href="#{new_post_path}" class="btn btn-default" aria-label="Center Align"
-            small
-              i> class="glyphicon glyphicon-plus"
-              | New Post
-
-  div#posts-list
-    - @posts.each do |post|
-      div
-        h2
-          a href="#{post_path(post)}" #{post.title}
-        div
-          = simple_format truncate(post.content, length: 650, omission: '...', escape: false)
-          hr
-
-- if Settings.frontend.use_mvc
-  - @js_abilities = ability_to_array(current_ability)
-  javascript:
-    $(function() {
-      // Get the current user
-      window.user = new Blog.Models.User(#{{current_or_guest_user.to_json(only: [:id, :first_name, :last_name, :guest, :admin], methods: [:admin])}})
-      window.ability = new Ability({ rules: #{{@js_abilities.to_json}} });
-
-      // Initiate the blog frontend app
-      window.router = new Blog.Routers.PostsRouter();
-      $('body').on('click', function() {
-        $(this).find('.alert').remove();
-      });
-      Backbone.history.start();
-      navigation = new Backbone.Navigation();
-      navigation.handleRouter(window.router);
-    });
-  
+  - if Settings.frontend.use_mvc
+    = render partial: 'index_backbone'
+  - else
+    = render partial: 'index'

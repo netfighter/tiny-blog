@@ -4,6 +4,7 @@ RSpec.describe "posts/index", :type => :view do
   let(:admin) { FactoryGirl.create(:admin) }
 
   before do
+    Settings.frontend.use_mvc = false
     sign_in admin
   end
 

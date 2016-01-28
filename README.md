@@ -17,7 +17,7 @@ A simple blog system built with Ruby on Rails 3, Twitter Bootstrap and Slim temp
 
         bundle exec rake db:seed
 
-5. Using a browser, go to `http://localhost:3000`. You can sign in using the credentials:
+5. In your web browser of choice, go to `http://localhost:3000`. You can sign in using the credentials:
 
         email: admin@admin.com
         password: administrator
