@@ -18,9 +18,9 @@ class Blog.Views.PostsNewView extends Backbone.View
     e.preventDefault()
     e.stopPropagation()
 
-    title = $('#title').val()
-    content = $('#content').val()
-    @model.set {title: title, content: content}
+    title = $(@el).find('#title').val()
+    content = $(@el).find('#content').val()
+    @model.set { title: title, content: content }
 
     if @model.isValid(true)
       @model.unset('comments', 'silent')

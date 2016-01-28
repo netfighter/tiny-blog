@@ -8,7 +8,7 @@ div class="media"
       - if window.user.get('admin') || window.user.id == @user.id
         .pull-right
           small
-            a href="#" data-confirm="Are you sure?" data-method="delete" class="comment-destroy"
+            a href="#" data-confirm="Are you sure you want to delete this record?" data-method="delete" class="comment-destroy"
               i> class="glyphicon glyphicon-remove"
               | Delete
 

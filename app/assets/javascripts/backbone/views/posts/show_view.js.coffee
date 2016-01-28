@@ -31,7 +31,7 @@ class Blog.Views.PostsShowView extends Backbone.View
     e.preventDefault()
     e.stopPropagation()
 
-    if confirm('Are you sure?')
+    if confirm('Are you sure you want to delete this record?')
       @model.destroy()
       window.location.hash = "/posts/index"
 

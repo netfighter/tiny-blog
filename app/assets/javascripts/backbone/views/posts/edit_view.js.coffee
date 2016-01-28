@@ -21,12 +21,12 @@ class Blog.Views.PostsEditView extends Backbone.View
     e.preventDefault()
     e.stopPropagation()
 
-    title = $('#title').val()
-    content = $('#content').val()
-    @model.set {title: title, content: content}
+    title = $(@el).find('#title').val()
+    content = $(@el).find('#content').val()
+    @model.set { title: title, content: content }
 
     if @model.isValid(true)
-      @model.save {title: title, content: content},
+      @model.save { title: title, content: content },
         success: (post) =>
           @model = post
           $(@el).off 'submit', '#edit-post'
