@@ -12,7 +12,9 @@ class Blog.Views.PostsEditView extends Backbone.View
     @render()
 
   render: ->
-    @$el.html @template(@model.toJSON())
+    @model.fetch(success: (model) =>
+      @$el.html(@template(model.toJSON()))
+    )
     @
 
   update: (e) ->

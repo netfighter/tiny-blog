@@ -6,7 +6,7 @@ class Blog.Views.PostsIndexView extends Backbone.View
 
   initialize: ->
     @render()
-    @addAll()
+    @collection.bind 'reset', @addAll, @
 
   addAll: ->
     @collection.forEach(@addOne, @)
@@ -17,4 +17,5 @@ class Blog.Views.PostsIndexView extends Backbone.View
 
   render: ->
     @$el.html @template()
+    @addAll()
     @

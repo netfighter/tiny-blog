@@ -12,8 +12,9 @@ class Blog.Views.PostsShowView extends Backbone.View
     @render()
 
   render: ->
-    @$el.html(@template(@model.toJSON()))
-    @model.fetch(success: (model) ->
+    @model.fetch(success: (model) =>
+      @$el.html(@template(model.toJSON()))
+
       # display comments
       commentsView = new Blog.Views.CommentsIndexView({collection: model.get('comments')})
       commentsView.render()
