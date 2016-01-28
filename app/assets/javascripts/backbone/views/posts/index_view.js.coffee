@@ -5,8 +5,13 @@ class Blog.Views.PostsIndexView extends Backbone.View
   template: JST["backbone/templates/posts/index"]
 
   initialize: ->
-    @render()
+    @listenTo @collection, 'reset', @render
+    @collection.fetch({ reset: true })
+
+  render: ->
+    @$el.html @template()
     @addAll()
+    @
 
   addAll: ->
     @collection.forEach(@addOne, @)
@@ -14,7 +19,3 @@ class Blog.Views.PostsIndexView extends Backbone.View
   addOne: (model) ->
     @view = new Blog.Views.PostView({model: model})
     @$el.find('#posts-list').append @view.render().el
-
-  render: ->
-    @$el.html @template()
-    @

@@ -1,6 +1,6 @@
 class Blog.Models.PostComment extends Backbone.NestedAttributesModel
   initialize: ->
-    @urlRoot = '/posts/' + this.get('post_id') + '/comments'
+    @urlRoot = '/posts/' + @.get('post_id') + '/comments'
 
   defaults:
     content: ''

@@ -12,8 +12,9 @@ class Blog.Views.PostsShowView extends Backbone.View
     @render()
 
   render: ->
-    @$el.html(@template(@model.toJSON()))
-    @model.fetch(success: (model) ->
+    @model.fetch(success: (model) =>
+      @$el.html(@template(model.toJSON()))
+
       # display comments
       commentsView = new Blog.Views.CommentsIndexView({collection: model.get('comments')})
       commentsView.render()
@@ -30,7 +31,7 @@ class Blog.Views.PostsShowView extends Backbone.View
     e.preventDefault()
     e.stopPropagation()
 
-    if confirm('Are you sure?')
+    if confirm('Are you sure you want to delete this record?')
       @model.destroy()
       window.location.hash = "/posts/index"
 

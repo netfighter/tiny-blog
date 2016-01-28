@@ -13,7 +13,7 @@ class Blog.Views.CommentView extends Backbone.View
     e.preventDefault()
     e.stopPropagation()
 
-    if confirm('Are you sure?')
+    if confirm('Are you sure you want to delete this record?')
       @model.destroy()
       this.remove()
 
