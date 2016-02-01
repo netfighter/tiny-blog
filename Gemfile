@@ -1,24 +1,23 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.21'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '4.2.5'
 
 gem 'mysql2'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails'
+  gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
 end
+
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
 
 gem 'jquery-rails'
 gem 'rails-timeago', '~> 2.0'
@@ -49,18 +48,18 @@ gem 'thin'
 # gem 'debugger'
 
 # Use slim templating engine
-gem 'slim', '~> 2.0.0'
+gem 'slim'
 
 # Skim - Slim for client side templates
-gem 'skim', '~> 0.9.3'
+gem 'skim'
 
 # Compass
 gem 'compass'
 
-gem 'rails_config'
+gem 'config'
 
 gem 'devise'
-gem 'cancancan', '~> 1.10.0'
+gem 'cancancan'
 gem 'devise-bootstrap-views'
 
 group :development do
@@ -68,10 +67,12 @@ group :development do
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'letter_opener'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'database_cleaner'

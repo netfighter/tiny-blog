@@ -1,10 +1,9 @@
-Blog::Application.routes.draw do
+Rails.application.routes.draw do
   resources :posts do
     resources :comments, only: [:create, :destroy]
   end
 
-  #devise_for :users, controllers: { registrations: 'registrations' }
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
   resources :users
 
   root to: 'posts#index'

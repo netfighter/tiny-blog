@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :confirmable, :recoverable,
          :rememberable, :trackable, :validatable, :registerable
 
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :guest, :admin
   validates_presence_of :first_name
 
   before_create :set_default_role
@@ -31,7 +30,7 @@ class User < ActiveRecord::Base
 
   def add_role(role)
     unless role? role
-      self.roles << Role.find_or_create_by_name(role.to_s)
+      self.roles << Role.where(name: role.to_s).first_or_create
     end
   end
 
@@ -39,7 +38,7 @@ class User < ActiveRecord::Base
 
   def set_default_role
     unless role? 'user'
-      self.roles << Role.find_or_create_by_name('user')
+      self.roles << Role.where(name: 'user').first_or_create
     end
   end
 
