@@ -1,5 +1,5 @@
 # Tiny Blog [![Build Status](https://travis-ci.org/netfighter/tiny-blog.svg?branch=master)](https://travis-ci.org/netfighter/tiny-blog)
-A simple blog system built with Ruby on Rails 3, Twitter Bootstrap and Slim templating engine
+A simple blog system built with Ruby on Rails 4.2.5, Twitter Bootstrap and Slim templating engine
 
 ## Installation steps
 
@@ -21,3 +21,7 @@ A simple blog system built with Ruby on Rails 3, Twitter Bootstrap and Slim temp
 
         email: admin@admin.com
         password: administrator
+        
+6. You can use the Backbone.js implementation by changing one setting in `config/settings.yml`
+
+        use_mvc: yes
