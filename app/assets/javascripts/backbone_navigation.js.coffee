@@ -24,6 +24,8 @@ $ ->
             crumbName = _.string.capitalize(router.routes[routeName]) + " " + router.name
             breadcrumbs.push('<li>' + crumbName + '</li>')
 
+      if $('.breadcrumb').length == 0
+        $('<ol class="breadcrumb"></ol>').insertBefore('#posts')
       $('.breadcrumb').html("");
       for i of breadcrumbs
         $('.breadcrumb').append(breadcrumbs[i])
