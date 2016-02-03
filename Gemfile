@@ -26,7 +26,6 @@ gem 'less-rails-bootstrap'
 gem 'underscore-string-rails'
 #gem 'rails-backbone', git: 'git@github.com:codebrew/backbone-rails.git'
 gem 'rails-backbone', git: 'https://github.com/netfighter/backbone-rails'
-gem 'backbone-validation-rails'
 gem 'backbone-nested-attributes'
 
 # Gretel breadcrumbs
@@ -76,4 +75,5 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'database_cleaner'
+  gem 'jasmine'
 end
