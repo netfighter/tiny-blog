@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post = Post.includes(:comments => :user).find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.erb 
       format.json { render json: @post, include: { comments: { include: :user } } }
     end
   end
