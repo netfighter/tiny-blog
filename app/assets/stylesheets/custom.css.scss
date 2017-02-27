@@ -9,6 +9,17 @@ html {
 body {
   padding-bottom: 60px;
 }
+
+/* Custom page header */
+a.navbar-brand {
+  padding-left: 40px;
+  background-image: url(asset-path("rails-logo.png"));
+  background-repeat: no-repeat;
+  background-position: left center; 
+  background-size: 28%;
+}
+
+/* Sticky footer */
 .footer {
   position: fixed;
   bottom: 0;
@@ -16,6 +27,8 @@ body {
   height: 60px;
   background-color: $color_log_cabin_approx;
   border-top: 1px solid $color_cod_gray_approx;
+  z-index: 1;
+
   p {
     margin-top: 20px;
   }

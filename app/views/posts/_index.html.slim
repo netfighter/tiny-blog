@@ -15,5 +15,5 @@ div#posts-list
       h2
         a href="#{post_path(post)}" #{post.title}
       div
-        = simple_format truncate(post.content, length: 650, omission: '...', escape: false)
+        = markdown(truncate(post.content, length: 650, omission: '...', escape: false))
         hr
