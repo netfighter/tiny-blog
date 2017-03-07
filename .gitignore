@@ -17,6 +17,7 @@
 /*.sublime-project
 /*.sublime-workspace
 /.sass-cache
+/.vscode
 
 config/settings.local.yml
 config/settings/*.local.yml

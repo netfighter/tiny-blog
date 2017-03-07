@@ -1,2 +1,2 @@
 frontend:
-  use_mvc: yes
+  use_mvc: no
