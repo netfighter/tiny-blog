@@ -33,3 +33,12 @@ a.navbar-brand {
     margin-top: 20px;
   }
 }
+
+/* Blog post */
+#posts-list h2 a {
+  text-decoration: none;
+}
+
+#posts-list img, #post-content img {
+  max-width: 100%;
+}

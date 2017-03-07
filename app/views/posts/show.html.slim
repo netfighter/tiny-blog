@@ -23,7 +23,7 @@
                       method: :delete,
                       'aria-label' => 'Justify'
 
-div = markdown @post.content
+div#post-content = markdown @post.content
 hr
 
 - if !current_user
