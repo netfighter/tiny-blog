@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource
-  before_filter :find_post
+  before_action :find_post
 
   def create
     @comment = @post.comments.build(comment_params)
