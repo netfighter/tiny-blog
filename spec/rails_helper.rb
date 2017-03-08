@@ -9,10 +9,6 @@ require 'support/devise_support'
 require 'devise'
 
 RSpec.configure do |config|
-  config.include Devise::TestHelpers, :type => :controller
-end
-
-RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -20,6 +16,6 @@ RSpec.configure do |config|
 
   config.infer_spec_type_from_file_location!
 
-  config.include Devise::TestHelpers, :type => :controller
-  config.include Devise::TestHelpers, :type => :view
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.include Devise::Test::ControllerHelpers, :type => :view
 end

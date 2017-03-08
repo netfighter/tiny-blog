@@ -28,8 +28,7 @@ gem 'rails-backbone', git: 'https://github.com/netfighter/backbone-rails'
 gem 'backbone-nested-attributes'
 
 # Gretel breadcrumbs
-# gem 'gretel' #uncomment me
-
+gem 'gretel', git: 'https://github.com/ibiziiac-sv/gretel', branch: 'dev'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -65,7 +64,6 @@ gem 'redcarpet', '~> 3.0.0'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  # gem 'quiet_assets' #uncomment me
   gem 'letter_opener'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -77,4 +75,5 @@ group :development, :test do
   gem 'pry-rails'
   gem 'database_cleaner'
   gem 'jasmine'
+  gem 'rails-controller-testing'
 end
