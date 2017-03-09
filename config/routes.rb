@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :users, controller: 'registrations'
 
+  mount ActionCable.server => '/cable'
+
   root to: 'posts#index'
 
   %w( 403 404 422 500 ).each do |code|

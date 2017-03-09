@@ -1,16 +1,17 @@
 - if comment.valid?
-  div class="media"
-    div class="media-body"
-      h4 class="media-heading"
-        small> by
-        = comment.user.name
-        small< #{time_ago_in_words(comment.created_at)} ago
-        - if can? :destroy, comment
-          .pull-right
-            small
-              a href="#{post_comment_path(@post, comment)}" data-confirm="Are you sure?" data-method="delete"
-                i> class="glyphicon glyphicon-remove"
-                | Delete
+  - cache comment do
+    div class="media" id="comment-#{comment.id}"
+      div class="media-body"
+        h4 class="media-heading"
+          small> by
+          = comment.user.name
+          small< #{time_ago_in_words(comment.created_at)} ago
+          - if can? :destroy, comment
+            .pull-right
+              small
+                = link_to post_comment_path(comment.post, comment), remote: true, method: :delete, data: { confirm: "Are you sure?" } do
+                  i> class="glyphicon glyphicon-remove"
+                  | Delete
 
-      = comment.content
-      hr
+        = comment.content
+        hr
