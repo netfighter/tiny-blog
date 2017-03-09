@@ -31,13 +31,5 @@ hr
     | You need to
     a<> href="#{"#{new_user_session_path}"}" Sign in
     | to be able to add comments.
-- if can? :create, Comment
-  = render 'comments/form'
 
-h3 Comments
-hr
-#comments
-  - if @post.comments.any?
-    = render partial: @post.comments
-  - else
-    .alert.alert-info There are no comments yet.
+= render 'comments/comments', post: @post

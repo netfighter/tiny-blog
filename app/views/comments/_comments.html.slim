@@ -1,0 +1,7 @@
+- if can? :create, Comment
+  = render 'comments/new', post: post
+
+h3 Comments
+hr
+section id="comments" data-post-id="#{@post.id}"
+  = render @post.comments.reverse

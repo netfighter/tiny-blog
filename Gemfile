@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '5.0.1'
+gem 'rails', '~> 5.0.1'
+gem 'actioncable'
+gem 'puma'
 
 gem 'mysql2'
+gem 'redis'
 
 # Gems used only for assets and not required
 # in production environments by default.
