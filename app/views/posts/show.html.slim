@@ -26,10 +26,4 @@
 div#post-content = markdown @post.content
 hr
 
-- if !current_user
-  .alert.alert-info
-    | You need to
-    a<> href="#{"#{new_user_session_path}"}" Sign in
-    | to be able to add comments.
-
 = render 'comments/comments', post: @post

@@ -14,6 +14,7 @@ class Blog.Views.PostsEditView extends Backbone.View
   render: ->
     @model.fetch(success: (model) =>
       @$el.html(@template(model.toJSON()))
+      new SimpleMDE({ element: @$el.find("#post_content")[0] });
     )
     @
 
