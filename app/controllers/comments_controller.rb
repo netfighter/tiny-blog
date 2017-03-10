@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
       if @post.save
         format.html { redirect_to @post, notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created }
-        format.js   { CommentsChannel.broadcast_to "post:#{@post.id}", action: 'create', comment: @comment.reload }
+        format.js   { CommentsChannel.broadcast_to "post:#{@post.id}", action: 'create', comment_id: @comment.id }
       else
         format.html { render template: 'posts/show', locals: { comment: @comment } }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

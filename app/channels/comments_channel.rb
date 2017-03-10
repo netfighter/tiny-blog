@@ -1,16 +1,17 @@
 class CommentsChannel < ApplicationCable::Channel
   def follow(params)
     stop_all_streams
-    @post_channel = "comments:post:#{params['post_id'].to_i}"
+    post_channel = "comments:post:#{params['post_id'].to_i}"
 
-    stream_from @post_channel, -> (encoded_message) do
+    stream_from post_channel, -> (encoded_message) do
       ActiveRecord::Base.connection_pool.with_connection do
         message = ActiveSupport::JSON.decode(encoded_message)
 
         if message["action"] == "create"
-          transmit message.merge({ "comment" => render_comment(Comment.new(message["comment"]), current_user) })
+          comment = Comment.find(message["comment_id"])
+          transmit message.merge({ "comment" => render_comment(comment, current_user) }), via: post_channel
         else
-          transmit message
+          transmit message, via: post_channel
         end
       end
     end
