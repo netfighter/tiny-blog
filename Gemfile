@@ -9,6 +9,8 @@ gem 'mysql2'
 gem 'pg'
 gem 'redis'
 
+gem 'mailgun-ruby', '~>1.1.4'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
