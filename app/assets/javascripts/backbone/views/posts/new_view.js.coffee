@@ -13,6 +13,7 @@ class Blog.Views.PostsNewView extends Backbone.View
 
   render: ->
     @$el.html @template()
+    new SimpleMDE({ element: @$el.find("#post_content")[0] });
 
   save: (e) ->
     e.preventDefault()

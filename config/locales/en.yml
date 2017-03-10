@@ -20,4 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  home: "Home"
+  go_back: "Back"
+  error:
+    header_403: "403 - Forbidden"
+    header_404: "404 - Page Not Found"
+    header_422: "422 - Rejected"
+    header_500: "500 - Internal Server Error"
+    message_403: "You are not allowed to access this page"
+    message_404: "The page you were looking for doesn't exist"
+    message_422: "The change you wanted was rejected"
+    message_500: "We're sorry, but something went wrong"

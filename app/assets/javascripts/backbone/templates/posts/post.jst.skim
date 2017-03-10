@@ -1,5 +1,5 @@
 h2
   a href="#posts/#{@id}" #{@title}
 div
-  == _.string.truncate(@content, 650).replace(new RegExp('\n','g'), '<br />')
+  == @mdConverter.makeHtml(_.string.truncate(@content, 650))
   hr

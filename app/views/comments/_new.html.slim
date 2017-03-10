@@ -10,8 +10,8 @@
           - @comment.errors.full_messages.each do |msg|
             li = msg
 
-    = form_for [@post, Comment.new], role: 'form' do |f|
+    = form_for [@post, Comment.new], role: 'form', remote: true do |f|
       div class="form-group"
         = f.text_area :content, class: 'form-control', rows: 3
-
-      = f.submit "Add comment", class: 'btn btn-primary'
+      div class="form-group"
+        = f.submit "Add comment", class: 'btn btn-primary'

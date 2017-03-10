@@ -16,7 +16,7 @@
               i> class="glyphicon glyphicon-remove"
               | Delete
 
-div == @content.replace(new RegExp('\n','g'), '<br />')
+div == @mdConverter.makeHtml(@content)
 hr
 
 #new-comment-container

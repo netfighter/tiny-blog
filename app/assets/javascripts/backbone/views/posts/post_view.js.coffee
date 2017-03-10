@@ -4,5 +4,6 @@ class Blog.Views.PostView extends Backbone.View
   tagName: "div"
 
   render: ->
-    @$el.html(@template(@model.toJSON()))
+    mdConverter = new showdown.Converter()
+    @$el.html(@template(Object.assign({}, @model.toJSON(), { mdConverter: mdConverter })))
     @

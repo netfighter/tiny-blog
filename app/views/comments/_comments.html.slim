@@ -1,0 +1,13 @@
+- if !current_user
+  .alert.alert-info
+    | You need to
+    a<> href="#{"#{new_user_session_path}"}" Sign in
+    | to be able to add comments.
+
+- if can? :create, Comment
+  = render 'comments/new', post: post
+
+h3 Comments
+hr
+section id="comments" data-post-id="#{@post.id}"
+  = render @post.comments.reverse
