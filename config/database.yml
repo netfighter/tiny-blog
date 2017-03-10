@@ -36,7 +36,7 @@ production:
   encoding: utf8
   reconnect: false
   database: tiny_blog_production
-  pool: 5
-  username: root
-  password: mysql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: tiny_blog_user
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
   #socket: /var/run/mysqld/mysqld.sock
