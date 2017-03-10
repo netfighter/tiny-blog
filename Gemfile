@@ -6,6 +6,7 @@ gem 'actioncable'
 gem 'puma'
 
 gem 'mysql2'
+gem 'pg'
 gem 'redis'
 
 # Gems used only for assets and not required
