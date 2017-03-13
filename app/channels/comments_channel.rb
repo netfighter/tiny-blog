@@ -8,8 +8,9 @@ class CommentsChannel < ApplicationCable::Channel
         message = ActiveSupport::JSON.decode(encoded_message)
 
         if message["action"] == "create"
-          comment = Comment.find(message["comment_id"])
-          transmit message.merge({ "comment" => render_comment(comment, current_user) }), via: post_channel
+          #comment = Comment.find(message["comment_id"])
+          #transmit message.merge({ "comment" => render_comment(comment, current_user) }), via: post_channel
+          transmit message.merge({ "comment" => render_comment(Comment.new(message["comment"]), current_user) }), via: post_channel
         else
           transmit message, via: post_channel
         end
