@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.3.5"
+ruby "2.5.1"
 
 gem 'rails', '~> 5.0.1'
 gem 'actioncable'
@@ -42,9 +42,6 @@ gem 'gretel', git: 'https://github.com/ibiziiac-sv/gretel', branch: 'dev'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
-# Use thin as the app server
-gem 'thin'
-
 # Deploy with Capistrano
 # gem 'capistrano'
 
@@ -62,8 +59,8 @@ gem 'compass'
 
 gem 'config'
 
-gem 'devise'
-gem 'cancancan'
+gem 'devise', '4.4.0'
+gem 'cancancan', '1.16.0'
 gem 'devise-bootstrap-views'
 
 gem 'redcarpet', '~> 3.0.0'
