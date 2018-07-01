@@ -4,7 +4,7 @@ ruby "2.5.1"
 gem 'rails', '~> 5.1.6'
 gem 'actioncable'
 gem 'puma'
-gem 'pg'
+gem 'pg', '~> 1.0.0'
 gem 'redis'
 
 gem 'mailgun-ruby', '~>1.1.4'
@@ -24,7 +24,7 @@ end
 gem 'jquery-rails'
 gem 'rails-timeago', '~> 2.0'
 gem 'therubyracer'
-gem 'less-rails-bootstrap'
+gem 'bootstrap-sass', '~> 3.3.7'
 gem 'underscore-string-rails'
 gem 'rails-backbone'
 gem 'backbone-nested-attributes'
@@ -46,9 +46,6 @@ gem 'slim'
 
 # Skim - Slim for client side templates
 gem 'skim'
-
-# Compass
-gem 'compass'
 
 gem 'config'
 

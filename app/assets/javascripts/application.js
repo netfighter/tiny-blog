@@ -19,6 +19,6 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone-nested-attributes/all
-//= require twitter/bootstrap
 //= require backbone/blog
+//= require bootstrap-sprockets
 //= require_tree .
