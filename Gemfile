@@ -1,12 +1,10 @@
 source 'https://rubygems.org'
-ruby "2.3.5"
+ruby "2.5.1"
 
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.1.6'
 gem 'actioncable'
 gem 'puma'
-
-gem 'mysql2'
-gem 'pg'
+gem 'pg', '~> 1.0.0'
 gem 'redis'
 
 gem 'mailgun-ruby', '~>1.1.4'
@@ -23,27 +21,19 @@ group :assets do
   gem 'uglifier'
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
 gem 'jquery-rails'
 gem 'rails-timeago', '~> 2.0'
 gem 'therubyracer'
-gem 'less-rails-bootstrap'
+gem 'bootstrap-sass', '~> 3.3.7'
 gem 'underscore-string-rails'
-gem 'rails-backbone', git: 'https://github.com/netfighter/backbone-rails'
+gem 'rails-backbone'
 gem 'backbone-nested-attributes'
 
 # Gretel breadcrumbs
-gem 'gretel', git: 'https://github.com/ibiziiac-sv/gretel', branch: 'dev'
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'gretel'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
-
-# Use thin as the app server
-gem 'thin'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -57,22 +47,17 @@ gem 'slim'
 # Skim - Slim for client side templates
 gem 'skim'
 
-# Compass
-gem 'compass'
-
 gem 'config'
 
-gem 'devise'
-gem 'cancancan'
+gem 'devise', '4.4.3'
+gem 'cancancan', '1.16.0'
 gem 'devise-bootstrap-views'
 
 gem 'redcarpet', '~> 3.0.0'
 
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'letter_opener'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
