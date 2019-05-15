@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   sequence :email do |n|
     "user#{n}@example.com"
   end
@@ -9,14 +9,14 @@ FactoryGirl.define do
 
   factory :user do
     first_name
-    last_name 'The Great'
+    last_name { 'The Great' }
     email
-    password 'averysecretone'
-    password_confirmation 'averysecretone'
+    password { 'averysecretone' }
+    password_confirmation { 'averysecretone' }
     # required if the Devise Confirmable module is used
-    confirmed_at Time.now
+    confirmed_at { Time.now }
 
-    after(:create) {|user| user.add_role(:user)}
+    after(:create) { |user| user.add_role(:user) }
 
     factory :admin do
       after(:create) do |user|

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "posts/edit", :type => :view do
-  let(:admin) { FactoryGirl.create(:admin) }
+  let(:admin) { FactoryBot.create(:admin) }
 
   before do
     sign_in admin

@@ -1,7 +1,7 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :comment do
-    content "MyText"
-    association :user
-    association :post
+    content { 'MyText' }
+    user
+    post
   end
 end

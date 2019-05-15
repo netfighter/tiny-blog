@@ -11,7 +11,7 @@ RSpec.describe PostsController, :type => :controller do
   let(:invalid_attributes) {
     {title: '', content: ''}
   }
-  let(:admin) { FactoryGirl.create(:admin) }
+  let(:admin) { FactoryBot.create(:admin) }
   let(:ability) { Ability.new(admin) }
 
   before do

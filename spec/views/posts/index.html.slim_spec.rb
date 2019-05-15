@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "posts/index", :type => :view do
-  let(:admin) { FactoryGirl.create(:admin) }
+  let(:admin) { FactoryBot.create(:admin) }
 
   before do
     Settings.frontend.use_mvc = false
@@ -38,7 +38,7 @@ RSpec.describe "posts/index", :type => :view do
     end
 
     context 'user' do
-      let(:user) { FactoryGirl.create(:user) }
+      let(:user) { FactoryBot.create(:user) }
 
       before do
         sign_in user

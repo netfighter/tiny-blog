@@ -5,7 +5,7 @@
 module ValidUserRequestHelper
   def sign_in_as_a_valid_user
     # ASk factory girl to generate a valid user for us.
-    @user ||= FactoryGirl.create :user
+    @user ||= FactoryBot.create :user
 
     # We action the login request using the parameters before we begin.
     # The login requests will match these to the user we just created in the factory, and authenticate us.
@@ -14,7 +14,7 @@ module ValidUserRequestHelper
 
   def sign_in_as_admin
     # ASk factory girl to generate a valid user for us.
-    @user ||= FactoryGirl.create :admin
+    @user ||= FactoryBot.create :admin
 
     # We action the login request using the parameters before we begin.
     # The login requests will match these to the user we just created in the factory, and authenticate us.

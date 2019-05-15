@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe CommentsController, :type => :controller do
-  let(:blog_post) { FactoryGirl.create(:post) }
+  let(:blog_post) { FactoryBot.create(:post) }
   let(:valid_attributes) {
     { post_id: blog_post.id, comment: { content: 'A comment...'} }
   }
   let(:invalid_attributes) {
     { post_id: blog_post.id, comment: {content: ''} }
   }
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
   let(:ability) { Ability.new(user) }
 
   before do

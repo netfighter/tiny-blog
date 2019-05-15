@@ -8,7 +8,8 @@ class CommentsChannel < ApplicationCable::Channel
         message = ActiveSupport::JSON.decode(encoded_message)
 
         if message["action"] == "create"
-          transmit message.merge({ "comment" => render_comment(Comment.new(message["comment"]), current_user) }), via: post_channel
+          comment = render_comment(Comment.new(message["comment"]), current_user)
+          transmit message.merge({ "comment" => comment }), via: post_channel
         else
           transmit message, via: post_channel
         end
@@ -23,6 +24,10 @@ class CommentsChannel < ApplicationCable::Channel
   private
 
   def render_comment(comment, user)
-    ApplicationController.render_with_signed_in_user(user, partial: 'comments/comment', locals: { comment: comment })
+    ApplicationController.render_with_signed_in_user(
+      user,
+      partial: 'comments/comment',
+      locals: { comment: comment }
+    )
   end
 end
