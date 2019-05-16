@@ -1,5 +1,5 @@
 # Tiny Blog [![Build Status](https://travis-ci.org/netfighter/tiny-blog.svg?branch=master)](https://travis-ci.org/netfighter/tiny-blog)
-A simple blog system built with Ruby on Rails 5.0.1, Twitter Bootstrap and Slim templating engine
+A simple blog system built with Ruby on Rails 5.2.3, Twitter Bootstrap and Slim templating engine
 
 ## Installation steps
 
