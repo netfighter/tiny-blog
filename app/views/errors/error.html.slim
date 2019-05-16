@@ -5,6 +5,7 @@ html lang="en"
     meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     title= content_for?(:title) ? yield(:title) : "Tiny Blog"
+    link rel="icon" type="image/png" href="#{image_url("rails-logo.png")}"
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
@@ -16,7 +17,7 @@ html lang="en"
   body
     div class="container"
       div class="jumbotron text-center" style="margin-top: 10em;"
-        h1 = @header
+        h2 = @header
         br
         p = @message
         = link_to content_tag(:i, '', class: 'glyphicon glyphicon-home', style: 'margin-right: 0.5em;') + I18n.t('home'), root_url, class: 'btn btn-large btn-primary'

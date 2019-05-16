@@ -8,7 +8,7 @@
         - if can? :destroy, comment
           .pull-right
             small
-              = link_to post_comment_path(comment.post, comment), remote: true, method: :delete, data: { confirm: "Are you sure?" } do
+              = link_to post_comment_path(comment.post, comment), remote: true, method: :delete, data: { confirm: 'Are you sure?' } do
                 i> class="glyphicon glyphicon-remove"
                 | Delete
 

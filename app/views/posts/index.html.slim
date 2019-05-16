@@ -1,12 +1,11 @@
-div id="posts"
+div#posts
   - if can? :create, :post
     .row
-      .col-lg-12
+      .col-xs-12
         .pull-right
-          a href="#{new_post_path}" class="btn btn-default" aria-label="Center Align"
-            small
-              i> class="glyphicon glyphicon-plus"
-              | New Post
+          = link_to content_tag(:i, '', class: 'glyphicon glyphicon-plus') + ' New Post',
+                    new_post_path,
+                    class: 'btn btn-default btn-xs'
 
   div#posts-list
     - @posts.each do |post|
