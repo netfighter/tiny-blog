@@ -1,27 +1,20 @@
 - breadcrumb :post, @post
 
 .row
-  div class="col-lg-9 col-md-9 col-sm-9 col-xs-7"
-    h2 = @post.title
-  - if can? :manage, @post
-    div class="col-lg-3 col-md-3 col-sm-3 col-xs-5"
+  .col-xs-12
+    - if can? :manage, @post
       .pull-right
-        div class="btn-toolbar" role="toolbar"
-          div class="btn-group"
-            = link_to (content_tag(:small, content_tag(:i, '', class: 'glyphicon glyphicon-chevron-left') + ' Back')),
-                      posts_path,
-                      class: 'btn btn-default',
-                      'aria-label' => 'Left Align'
-            = link_to (content_tag(:small, content_tag(:i, '', class: 'glyphicon glyphicon-pencil') + ' Edit')),
+        div.btn-toolbar role="toolbar"
+          .btn-group
+            = link_to content_tag(:i, '', class: 'glyphicon glyphicon-pencil') + ' Edit',
                       edit_post_path(@post),
-                      class: 'btn btn-default',
-                      'aria-label' => 'Center Align'
-            = link_to content_tag(:small, content_tag(:i, '', class: 'glyphicon glyphicon-remove') + ' Delete'),
+                      class: 'btn btn-default btn-xs'
+            = link_to content_tag(:i, '', class: 'glyphicon glyphicon-remove') + ' Delete',
                       post_path(@post),
-                      class: 'btn btn-default',
-                      confirm: 'Are you sure?',
+                      class: 'btn btn-default btn-xs',
                       method: :delete,
-                      'aria-label' => 'Justify'
+                      data: { confirm: 'Are you sure?' }
+    h2 = @post.title
 
 div#post-content = markdown @post.content
 hr

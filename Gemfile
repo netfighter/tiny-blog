@@ -25,7 +25,7 @@ group :assets do
 end
 
 gem 'backbone-nested-attributes'
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
 gem 'rails-backbone'
 gem 'rails-timeago', '~> 2.0'
@@ -50,7 +50,7 @@ gem 'slim'
 gem 'config'
 
 gem 'cancancan', '1.16.0'
-gem 'devise', '4.4.3'
+gem 'devise', '4.6.0'
 gem 'devise-bootstrap-views'
 
 gem 'redcarpet', '~> 3.0.0'
@@ -81,8 +81,8 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
+  # gem 'capybara', '>= 2.15'
+  # gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  # gem 'chromedriver-helper'
 end
