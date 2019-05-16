@@ -12,10 +12,7 @@
     = f.text_field :title, class: 'form-control'
   div class="form-group"
     = f.label :content
-    = f.text_area :content, class: 'form-control', rows: '10'
+    = f.text_area :content, class: 'form-control md-editor', rows: '10'
   div class="form-group"
     = f.submit class: 'btn btn-primary'
     a< class="btn btn-default" href="#{posts_path}" role="button" Cancel
-
-javascript:
-  var simplemde = new SimpleMDE({ element: $("#post_content")[0] });

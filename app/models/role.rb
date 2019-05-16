@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Role < ActiveRecord::Base
   has_and_belongs_to_many :users
 
@@ -5,6 +7,6 @@ class Role < ActiveRecord::Base
   validates_uniqueness_of :name
 
   def to_s
-    self.name
+    name
   end
 end

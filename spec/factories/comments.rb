@@ -1,7 +1,9 @@
-FactoryGirl.define do
+# frozen_string_literal: true
+
+FactoryBot.define do
   factory :comment do
-    content "MyText"
-    association :user
-    association :post
+    content { 'MyText' }
+    user
+    post
   end
 end

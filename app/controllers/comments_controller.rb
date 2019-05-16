@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   load_and_authorize_resource
   before_action :find_post
@@ -11,9 +13,9 @@ class CommentsController < ApplicationController
         format.html { redirect_to @post, notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created }
         format.js do
-          CommentsChannel.broadcast_to "post:#{@post.id}", 
-                                       action: 'create', 
-                                       comment_id: @comment.id, 
+          CommentsChannel.broadcast_to "post:#{@post.id}",
+                                       action: 'create',
+                                       comment_id: @comment.id,
                                        comment: @comment
         end
       else
@@ -31,8 +33,8 @@ class CommentsController < ApplicationController
       format.html { redirect_to post_path(@post) }
       format.json { head :no_content }
       format.js do
-        CommentsChannel.broadcast_to "post:#{@post.id}", 
-                                     action: 'delete', 
+        CommentsChannel.broadcast_to "post:#{@post.id}",
+                                     action: 'delete',
                                      comment_id: @comment.id
         head :no_content
       end

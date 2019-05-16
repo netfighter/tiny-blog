@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "posts/show", :type => :view do
-  let(:admin) { FactoryGirl.create(:admin) }
+RSpec.describe 'posts/show', type: :view do
+  let(:admin) { FactoryBot.create(:admin) }
 
   before do
     sign_in admin
@@ -9,10 +11,10 @@ RSpec.describe "posts/show", :type => :view do
 
   before(:each) do
     @post = assign(:post, Post.create!(
-      :title => "Title",
-      :content => "Content",
-      :user => admin
-    ))
+                            title: 'Title',
+                            content: 'Content',
+                            user: admin
+                          ))
   end
 
   it 'renders attributes' do
@@ -27,7 +29,7 @@ RSpec.describe "posts/show", :type => :view do
   end
 
   it 'renders the comments' do
-    FactoryGirl.create(:comment, post: @post, content: 'Test comment')
+    FactoryBot.create(:comment, post: @post, content: 'Test comment')
     render
     expect(rendered).to match(/Test comment/)
   end

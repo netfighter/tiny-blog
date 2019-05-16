@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class UsersHaveAndBelongToManyRoles < ActiveRecord::Migration[5.1]
   def self.up
-    create_table :roles_users, :id => false do |t|
+    create_table :roles_users, id: false do |t|
       t.references :role, :user
     end
   end

@@ -1,5 +1,0 @@
-h2
-  a href="#posts/#{@id}" #{@title}
-div
-  == @mdConverter.makeHtml(_.string.truncate(@content, 650))
-  hr

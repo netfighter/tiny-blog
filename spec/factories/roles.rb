@@ -1,9 +1,11 @@
-FactoryGirl.define do
+# frozen_string_literal: true
+
+FactoryBot.define do
   factory :role do
-    name 'user'
+    name { 'user' }
   end
 
   factory :admin_role, parent: :role do
-    name 'admin'
+    name { 'admin' }
   end
 end

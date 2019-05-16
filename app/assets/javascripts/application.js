@@ -15,10 +15,5 @@
 //= require rails-timeago
 //= require underscore
 //= require underscore.string
-//= require backbone
-//= require backbone_rails_sync
-//= require backbone_datalink
-//= require backbone-nested-attributes/all
-//= require backbone/blog
 //= require bootstrap-sprockets
 //= require_tree .
