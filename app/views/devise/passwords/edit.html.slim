@@ -5,7 +5,7 @@
     h4
       = t('.change_your_password', default: 'Change your password')
   .panel-body
-    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, role: 'form', class: 'form form-horizontal' }) do |f|
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, role: 'form', class: 'form' }) do |f|
       = f.hidden_field :reset_password_token
       .row
         .form-group.col-xs-12.col-sm-8.col-md-4
