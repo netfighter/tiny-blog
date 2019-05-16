@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: %i[index show]
   load_and_authorize_resource
-  skip_authorize_resource only: [:index, :show]
+  skip_authorize_resource only: %i[index show]
 
   # GET /posts
   # GET /posts.json
@@ -17,10 +19,10 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.includes(:comments => :user).find(params[:id])
+    @post = Post.includes(comments: :user).find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb 
+      format.html # show.html.erb
       format.json { render json: @post, include: { comments: { include: :user } } }
     end
   end
@@ -52,7 +54,7 @@ class PostsController < ApplicationController
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -68,7 +70,7 @@ class PostsController < ApplicationController
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end

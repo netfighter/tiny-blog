@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "posts/show", :type => :view do
+RSpec.describe 'posts/show', type: :view do
   let(:admin) { FactoryBot.create(:admin) }
 
   before do
@@ -9,10 +11,10 @@ RSpec.describe "posts/show", :type => :view do
 
   before(:each) do
     @post = assign(:post, Post.create!(
-      :title => "Title",
-      :content => "Content",
-      :user => admin
-    ))
+                            title: 'Title',
+                            content: 'Content',
+                            user: admin
+                          ))
   end
 
   it 'renders attributes' do

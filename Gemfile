@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.5'
 
-gem 'rails', '~> 5.2.3'
 gem 'actioncable'
-gem 'puma'
 gem 'pg', '~> 1.1.4'
+gem 'puma'
+gem 'rails', '~> 5.2.3'
 gem 'redis'
 
 gem 'mailgun-ruby', '~>1.1.4'
@@ -17,7 +17,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # in production environments by default.
 group :assets do
   gem 'sass-rails', '~> 5.0'
-  gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -25,13 +24,13 @@ group :assets do
   gem 'uglifier'
 end
 
+gem 'backbone-nested-attributes'
+gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
+gem 'rails-backbone'
 gem 'rails-timeago', '~> 2.0'
 gem 'therubyracer'
-gem 'bootstrap-sass', '~> 3.3.7'
 gem 'underscore-string-rails'
-gem 'rails-backbone'
-gem 'backbone-nested-attributes'
 
 # Gretel breadcrumbs
 gem 'gretel'
@@ -48,9 +47,6 @@ gem 'gretel'
 # Use slim templating engine
 gem 'slim'
 
-# Skim - Slim for client side templates
-gem 'skim'
-
 gem 'config'
 
 gem 'cancancan', '1.16.0'
@@ -60,13 +56,13 @@ gem 'devise-bootstrap-views'
 gem 'redcarpet', '~> 3.0.0'
 
 group :development do
-# Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'letter_opener'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'letter_opener'
 end
 
 group :development, :test do
@@ -78,7 +74,9 @@ group :development, :test do
   gem 'rspec-rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'debase'
+  gem 'ruby-debug-ide'
 end
 
 group :test do
@@ -88,6 +86,3 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

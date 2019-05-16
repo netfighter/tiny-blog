@@ -1,5 +1,6 @@
-module AuthorizationHelper
+# frozen_string_literal: true
 
+module AuthorizationHelper
   # if user is logged in, return current_user, else return guest_user
   def current_or_guest_user
     if current_user
@@ -21,7 +22,7 @@ module AuthorizationHelper
     unless cookies.signed[:guest_user_email]
       cookies.permanent.signed[:guest_user_email] = create_guest_user.email
     end
-    
+
     @cached_guest_user ||=
       User.find_by_email(cookies.signed[:guest_user_email])
 
@@ -44,10 +45,9 @@ module AuthorizationHelper
   # creates guest user by adding a record to the DB
   # with a guest name and email
   def create_guest_user
-    u = User.create(first_name: "Guest", email: "guest_#{Time.now.to_i}#{rand(99)}@example.com", guest: true)
+    u = User.create(first_name: 'Guest', email: "guest_#{Time.now.to_i}#{rand(99)}@example.com", guest: true)
     u.skip_confirmation!
     u.save!(validate: false)
     u
   end
-
 end

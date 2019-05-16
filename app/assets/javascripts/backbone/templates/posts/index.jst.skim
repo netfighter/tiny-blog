@@ -1,9 +1,0 @@
-.row
-  .col-lg-12
-    - if window.ability.can("create", "Post")
-      .pull-right
-        a href="#posts/new" class="btn btn-default" aria-label="Center Align"
-          small
-            i> class="glyphicon glyphicon-plus"
-            | New Post
-div#posts-list

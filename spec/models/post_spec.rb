@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe ::Post, :type => :model do
+RSpec.describe ::Post, type: :model do
   it 'has a valid factory' do
     expect(FactoryBot.build(:post)).to be_valid
   end
@@ -25,5 +27,4 @@ RSpec.describe ::Post, :type => :model do
 
     expect(post).not_to be_valid
   end
-
 end

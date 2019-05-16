@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
     identified_by :current_user
@@ -15,8 +17,9 @@ module ApplicationCable
     end
 
     protected
+
     def find_verified_user
       User.find_by(id: session['warden.user.user.key'][0][0]) if session['warden.user.user.key']
     end
   end
-end  
+end

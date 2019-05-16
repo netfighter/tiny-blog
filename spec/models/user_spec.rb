@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe User, :type => :model do
+RSpec.describe User, type: :model do
   it 'has a valid factory' do
     expect(FactoryBot.build(:user)).to be_valid
   end
@@ -21,8 +23,8 @@ RSpec.describe User, :type => :model do
 
   it 'assigns roles' do
     roles = [
-        FactoryBot.create(:role, name: 'user'),
-        FactoryBot.create(:role, name: 'admin')
+      FactoryBot.create(:role, name: 'user'),
+      FactoryBot.create(:role, name: 'admin')
     ]
     user = FactoryBot.create(:user)
     user.add_role(:user)
