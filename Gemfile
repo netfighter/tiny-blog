@@ -50,7 +50,7 @@ gem 'slim'
 gem 'config'
 
 gem 'cancancan', '1.16.0'
-gem 'devise', '4.6.0'
+gem 'devise', '4.7.1'
 gem 'devise-bootstrap-views'
 
 gem 'redcarpet', '~> 3.0.0'
