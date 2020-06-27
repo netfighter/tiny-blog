@@ -76,6 +76,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'debase'
   gem 'ruby-debug-ide'
+  gem 'guard'
 end
 
 group :test do
