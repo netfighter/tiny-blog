@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    volumes:
+      - tiny_blog-sync:/app:nocopy # nocopy is important
+
+volumes:
+  tiny_blog-sync:
+    external: true
