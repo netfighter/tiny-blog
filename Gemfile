@@ -24,12 +24,11 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'backbone-nested-attributes'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
-gem 'rails-backbone'
 gem 'rails-timeago', '~> 2.0'
 gem 'therubyracer'
+gem 'underscore-rails'
 gem 'underscore-string-rails'
 
 # Gretel breadcrumbs

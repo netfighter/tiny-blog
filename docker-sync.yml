@@ -1,0 +1,10 @@
+version: "2"
+options:
+  compose-file-path:
+    - 'docker-compose.yml'
+syncs:  
+  tiny_blog-sync:
+    sync_strategy: 'native_osx'
+    src: './'
+    sync_excludes: ['log/*', 'tmp/*']
+    sync_excludes_type: 'Name'
