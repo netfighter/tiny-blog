@@ -68,7 +68,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'jasmine'
-  gem 'pry-rails'
+  gem 'pry', '~> 0.12.2'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
 
@@ -77,6 +77,8 @@ group :development, :test do
   gem 'debase'
   gem 'ruby-debug-ide'
   gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-rspec'
 end
 
 group :test do
