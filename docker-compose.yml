@@ -16,5 +16,11 @@ services:
     ports:
       - "3000:3000"
       - "5432:5432"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_PASSWORD=password
+      - DB_NAME=tiny_blog_dev
+      - DB_USER=postgres
     depends_on:
       - db

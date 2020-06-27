@@ -124,10 +124,20 @@ GEM
       factory_bot (~> 5.0.2)
       railties (>= 4.2.0)
     ffi (1.9.25)
+    formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     gretel (3.0.9)
       rails (>= 3.1.0)
+    guard (2.16.2)
+      formatador (>= 0.2.4)
+      listen (>= 2.7, < 4.0)
+      lumberjack (>= 1.0.12, < 2.0)
+      nenv (~> 0.1)
+      notiffany (~> 0.0)
+      pry (>= 0.9.12)
+      shellany (~> 0.0)
+      thor (>= 0.18.1)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (1.7.0)
@@ -154,6 +164,7 @@ GEM
     loofah (2.3.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
+    lumberjack (1.2.6)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     mailgun-ruby (1.1.10)
@@ -169,10 +180,14 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.12.2)
     msgpack (1.2.10)
+    nenv (0.3.0)
     netrc (0.11.0)
     nio4r (2.3.1)
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
+    notiffany (0.1.3)
+      nenv (~> 0.1)
+      shellany (~> 0.0)
     orm_adapter (0.5.0)
     pg (1.1.4)
     phantomjs (2.1.1.0)
@@ -265,6 +280,7 @@ GEM
     sassc (2.0.1)
       ffi (~> 1.9)
       rake
+    shellany (0.0.1)
     slim (3.0.9)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 1.3.3, < 2.1)
@@ -323,6 +339,7 @@ DEPENDENCIES
   devise-bootstrap-views
   factory_bot_rails
   gretel
+  guard
   jasmine
   jquery-rails
   letter_opener
