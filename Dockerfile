@@ -4,7 +4,7 @@ RUN mkdir /app
 WORKDIR /app
 COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
-RUN gem install bundler -v 2.0.1
+RUN gem install bundler -v 2.0.2
 RUN gem install rubocop
 RUN bundle install
 COPY . /app
