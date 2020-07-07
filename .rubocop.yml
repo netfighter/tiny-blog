@@ -1,0 +1,49 @@
+Style/SymbolArray:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/RegexpLiteral:
+  EnforcedStyle: slashes
+  AllowInnerSlashes: true
+Style/WordArray:
+  EnforcedStyle: brackets
+
+Layout/SpaceAroundMethodCallOperator:
+ Enabled: False
+Layout/SpaceInLambdaLiteral:
+  Enabled: true
+  EnforcedStyle: require_space
+Layout/LineLength:
+  Exclude:
+    - config/routes.rb
+    - config/initializers/**/*.rb
+
+Metrics/AbcSize:
+  Enabled: false
+
+Lint/RaiseException:
+  Enabled: false
+
+Lint/StructNewOverride:
+  Enabled: false
+
+Style/ExponentialNotation:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: false
+Style/HashTransformValues:
+  Enabled: false
+
+# Rails/Output:
+#   Enabled: false
+
+AllCops:
+  TargetRubyVersion: 2.5.5

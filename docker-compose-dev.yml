@@ -1,8 +1,5 @@
 version: '3'
 services:
-  db:
-    ports:
-      - 2345:5432
   web:
     volumes:
       - tiny_blog-sync:/app:nocopy # nocopy is important

@@ -15,7 +15,7 @@ do
 done
 
 CHECK_DB=$(PGPASSWORD=$DB_PASSWORD psql postgres -h $DB_HOST -U $DB_USER -tAc "SELECT 1 FROM pg_database WHERE datname='$DB_NAME'")
-if [ "$CHECK_DB" == "1" ] && [ "$DATABASE_DUMP_VALUE" != "true" ]; then
+if [ "$CHECK_DB" == "1" ]; then
   echo "we have db"
 else
   bin/bash -c 'bundle exec rails db:setup; exit 0'
