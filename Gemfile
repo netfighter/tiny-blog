@@ -52,7 +52,7 @@ gem 'cancancan', '1.16.0'
 gem 'devise', '4.7.1'
 gem 'devise-bootstrap-views'
 
-gem 'redcarpet', '~> 3.0.0'
+gem 'redcarpet', '~> 3.5.1'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
